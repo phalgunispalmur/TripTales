@@ -29,7 +29,8 @@
         "android.permission.WRITE_EXTERNAL_STORAGE",
         "android.permission.READ_MEDIA_IMAGES",
         "android.permission.RECORD_AUDIO"
-      ]
+      ],
+      "package": "com.phalgunisp22.TripTales"
     },
     "web": {
       "output": "static",
