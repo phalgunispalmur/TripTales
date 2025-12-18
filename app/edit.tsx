@@ -1,10 +1,12 @@
 import * as ImagePicker from "expo-image-picker";
 import { router, useLocalSearchParams } from "expo-router";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     ActivityIndicator,
     Alert,
     Image,
+    KeyboardAvoidingView,
+    Platform,
     ScrollView,
     StyleSheet,
     Text,
@@ -127,14 +129,17 @@ export default function EditScreen() {
 
     setLoading(true);
     try {
+      console.log("Updating trip:", updatedTrip.id);
       await updateTrip(updatedTrip);
+      console.log("Trip updated successfully");
       setLoading(false);
       router.back();
       Alert.alert("Success", "Trip updated!");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error updating trip:", error);
       setLoading(false);
-      Alert.alert("Error", "Failed to update trip. Please try again.");
+      const errorMessage = error?.message || "Failed to update trip. Please try again.";
+      Alert.alert("Error", errorMessage);
     }
   };
 
