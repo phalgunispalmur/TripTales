@@ -1,0 +1,74 @@
+{
+  "expo": {
+    "name": "TripTales",
+    "slug": "TripTales",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "triptales",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "TripTales needs access to your camera to take photos for your trip stories.",
+        "NSPhotoLibraryUsageDescription": "TripTales needs access to your photo library to select photos for your trip stories."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F5F5F0",
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundImage": "./assets/images/logo.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#F5F5F0",
+          "dark": {
+            "image": "./assets/images/logo.png",
+            "backgroundColor": "#F5F5F0"
+          }
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "TripTales needs access to your photos to select images for your trip stories.",
+          "cameraPermission": "TripTales needs access to your camera to take photos for your trip stories."
+        }
+      ],
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5aa57b7e-62be-4c57-8770-fa0608d76bc8"
+      }
+    }
+  }
+}
